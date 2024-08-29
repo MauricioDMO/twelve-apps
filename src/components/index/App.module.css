@@ -1,0 +1,55 @@
+.app {
+  @property --x-position {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+  }
+
+  @property --y-position {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 0%;
+  }
+
+  @property --size {
+    syntax: "<length>";
+    inherits: true;
+    initial-value: 100%;
+  }
+
+  & * {
+    z-index: 20;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    z-index: 10;
+    border-radius: inherit;
+    background-color: #1a1a1ab2;
+    backdrop-filter: url(#noiseFilter);
+    border: 1px solid #fff6;
+    opacity: .9;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: var(--x-position);
+    top: var(--y-position);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    height: var(--size);
+    aspect-ratio: 1;
+    background-image: radial-gradient(circle, var(--color) 0%, transparent 60%);
+    opacity: 0;
+    transition: left 0.2s, top 0.2s, opacity 0.5s;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
