@@ -49,7 +49,7 @@ export function App ({name, description, requirements, image, url, color = "#fff
 
     setSize((width + height) / 2);
 
-    const strong = 50;
+    const strong = 10;
     percentageX = (1 / (1 + Math.pow(3, -strong * (percentageX - 0.5)))) * 100
     percentageY = (1 / (1 + Math.pow(3, -strong * (percentageY - 0.5)))) * 100
 
