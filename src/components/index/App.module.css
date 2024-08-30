@@ -46,7 +46,7 @@
     aspect-ratio: 1;
     background-image: radial-gradient(circle, var(--color) 0%, transparent 60%);
     opacity: 0;
-    transition: left 0.2s, top 0.2s, opacity 0.5s;
+    transition: left 0.3s, top 0.3s, opacity .7s ease-in-out;
   }
 
   &:hover::after {
