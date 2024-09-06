@@ -1,6 +1,5 @@
 import { useGame } from "../hooks/useGame";
 import styles from "./Token.module.css";
-import "./Animations.css"
 import { TOKEN } from "../utils/constants";
 
 export function Token ({ position, cell }: { position: number, cell: number }) {
