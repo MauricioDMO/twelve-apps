@@ -1,0 +1,16 @@
+.tableMask {
+  background-image: radial-gradient(circle, transparent 50%, rgb(37 99 235) 51%);
+  background-size: calc(100% / 7) calc(100% / 6);
+
+  &::after {
+    @apply bg-blue-700;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -8px;
+    border-radius: 4px 4px 0 0;
+    width: calc(100% + 16px);
+    height: 8px;
+    transform: translateY(100%);
+  }
+}
