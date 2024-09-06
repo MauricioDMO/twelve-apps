@@ -1,0 +1,15 @@
+@property --start {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(var(--start));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
