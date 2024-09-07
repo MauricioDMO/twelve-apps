@@ -4,6 +4,7 @@ import { type AppProps, App } from "@/components/App";
 const LIST_OF_APPS: AppProps[] = [
   {
     url: '/connect4',
+    codeUrl: 'https://github.com/MauricioDMO/twelve-apps/tree/main/src/app/(apps)/connect4',
     name: 'Conecta 4',
     description: "Crear el juego de Conecta 4",
     requirements: [

@@ -10,6 +10,7 @@ import styles from "./App.module.css"
 
 export interface AppProps {
   url: string;
+  codeUrl: string;
   name: string;
   description: string;
   requirements: string[];
@@ -31,7 +32,7 @@ const getRandColor = () => {
 }
 
 
-export function App ({name, description, requirements, image, url, color = "#ffffff20", randomColor } : AppProps) {
+export function App ({name, description, requirements, image, url, codeUrl, color = "#ffffff20", randomColor } : AppProps) {
   const [xPosition, setXPosition] = useState(0);
   const [yPosition, setYPosition] = useState(0);
   const randomColorRef = useRef(getRandColor());
@@ -99,7 +100,7 @@ export function App ({name, description, requirements, image, url, color = "#fff
       Ver proyecto
       <IconArrowRight stroke={2} />
     </Link>
-    <a href="https://github.com/MauricioDMO/twelve-apps"
+    <a href={codeUrl} target="_blank" rel="noopener noreferrer"
       className="bg-zinc-700 border-transparent border text-white px-4 py-2 rounded-md hover:border-white transition flex items-center gap-2 hover:scale-105">
       Ver código
       <IconBrandGithub stroke={2} />
