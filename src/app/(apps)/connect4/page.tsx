@@ -2,6 +2,7 @@ import { robotoMono } from "@/ui/fonts";
 import { Table } from "./components/Table";
 import { RestartButton } from "./components/RestartButton";
 import { GameProvider } from "./context/Game";
+import "./animation.css";
 
 export default function Connect4 () {
 

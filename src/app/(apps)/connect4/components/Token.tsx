@@ -19,11 +19,12 @@ export function Token ({ position, cell }: { position: number, cell: number }) {
 
   return <div
     onClick={() => setCell(position)}
+    style={animationStyle}
     className={`size-full aspect-square p-2 grid place-items-center rounded-full select-none
+      ${cell !== TOKEN.EMPTY ? 'animate' : ''}
       ${winner !== TOKEN.EMPTY ? 'cursor-not-allowed' : 'cursor-pointer'}`}
   >
     <div
-      style={animationStyle}
       className={`size-full relative rounded-full ${style}`}/>
   </div>
 }
