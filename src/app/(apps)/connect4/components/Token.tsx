@@ -13,7 +13,7 @@ export function Token ({ position, cell }: { position: number, cell: number }) {
   
   const animationStyle = {
     "--fall": `${ROW * 75}ms`,
-    "--start": `-${ROW * 64}px`
+    "--start": `-${ROW * 100}%`
   } as React.CSSProperties &
     { "--fall": string, "--start": string }
 

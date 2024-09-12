@@ -33,9 +33,9 @@ export function GlobalCss() {
     }
 
     @property --start {
-      syntax: "<length>";
+      syntax: "<percentage>";
       inherits: true;
-      initial-value: 0px;
+      initial-value: 0%;
     }
   `}</style>
 }
