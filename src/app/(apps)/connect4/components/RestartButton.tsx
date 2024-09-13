@@ -8,7 +8,7 @@ export function RestartButton() {
   return (
     <button
       onClick={resetGame}
-      className="px-4 py-2 my-4 bg-zinc-600 text-white rounded">
+      className="px-4 py-2 bg-zinc-600 text-white rounded">
       Reiniciar
     </button>
   );
