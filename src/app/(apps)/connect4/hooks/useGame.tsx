@@ -8,7 +8,7 @@ import { TOKEN, redColors, yellowColors } from '../utils/constants';
 import confetti from 'canvas-confetti';
 
 export function useGame() {
-  const { table, setTable, player, setPlayer, winner, setWinner } = useContext(GameContext);
+  const { table, setTable, player, setPlayer, winner, setWinner, winners, setWins } = useContext(GameContext);
 
   const resetGame = () => {
     setTable(Array(42).fill(0));
@@ -40,6 +40,11 @@ export function useGame() {
     const anyWinner = checkWinner({ index: i, table: newTable })
     if (anyWinner) {
       setWinner(anyWinner)
+      
+      const currentWins = structuredClone(winners)
+      currentWins.wins.push(anyWinner)
+      currentWins[anyWinner === TOKEN.PLAYER1 ? 'red' : 'yellow']++
+      setWins(currentWins)
 
       const confettiSettings = {
         colors: anyWinner === TOKEN.PLAYER1 ? redColors : yellowColors,
@@ -60,5 +65,9 @@ export function useGame() {
     switchPlayer()
   }
 
-  return { resetGame, switchPlayer, setCell, table, player, winner }
+  const resetWins = () => {
+    setWins({ red: 0, yellow: 0, wins: [] })
+  }
+
+  return { resetGame, switchPlayer, setCell, resetWins, table, player, winner, winners }
 }
