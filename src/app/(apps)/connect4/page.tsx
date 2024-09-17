@@ -7,6 +7,7 @@ import { GameProvider } from "./context/Game";
 import { Panel } from "./components/Panel";
 import { ResetWinsButton } from "./components/ResetWinsButton";
 import { HelpBubble } from "./components/HelpBubble";
+import Meteors from "@/components/Meteors";
  
 export const metadata: Metadata = {
   title: '12 Apps - Conecta 4',
@@ -18,7 +19,8 @@ export default function Connect4 () {
   return (
     <>
       <GlobalCss />
-      <div className="bg-gradient-to-br from-slate-700 via-slate-900 to-black">
+      <div className="relative overflow-clip bg-gradient-to-br from-slate-700 via-slate-900 to-black">
+        <Meteors number={25} />
         <h1 className={`text-2xl py-4 text-center ${robotoMono.className}`} >
           Conecta 4
         </h1>
@@ -26,7 +28,7 @@ export default function Connect4 () {
           <GameProvider>
             <Panel />
             <Table />
-            <section className="flex gap-2 my-8">
+            <section className="flex gap-2 my-8 z-10">
               <RestartButton />
               <ResetWinsButton />
             </section>
