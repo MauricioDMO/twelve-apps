@@ -1,13 +1,13 @@
+import Meteors from "@/components/Meteors";
 import { robotoMono } from "@/ui/fonts";
 import type { Metadata } from 'next';
 import { GlobalCss } from './components/GlobalCss';
+import { HelpBubble } from "./components/HelpBubble";
+import { Panel } from "./components/Panel";
+import { ResetWinsButton } from "./components/ResetWinsButton";
 import { RestartButton } from "./components/RestartButton";
 import { Table } from "./components/Table";
 import { GameProvider } from "./context/Game";
-import { Panel } from "./components/Panel";
-import { ResetWinsButton } from "./components/ResetWinsButton";
-import { HelpBubble } from "./components/HelpBubble";
-import Meteors from "@/components/Meteors";
  
 export const metadata: Metadata = {
   title: '12 Apps - Conecta 4',
