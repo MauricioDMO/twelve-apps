@@ -16,7 +16,7 @@ import { HintsProvider } from "./context/Hints";
 
 export const metadata: Metadata = {
   title: '12 Apps - Conecta 4',
-  description: 'Juego de conecta 4',
+  description: 'Juega al Conecta 4 en tu navegador. Un juego de mesa clásico para dos jugadores.',
 }
 
 export default function Connect4 () {
