@@ -17,7 +17,7 @@ export function HelpBubble() {
   return <>
     <div
       onClick={openHelp}
-      className="absolute bottom-4 left-4 p-2 cursor-pointer bg-sky-500 text-white rounded-full transition hover:scale-110">
+      className="p-2 cursor-pointer bg-sky-500 text-white rounded-full transition hover:scale-110">
       <IconQuestionMark stroke={2}/>
     </div>
     <dialog

@@ -10,7 +10,7 @@ export function Panel() {
 
 
   return (
-    <section className="w-full max-w-md mb-16 flex justify-evenly items-center border-b-white border-b p-2">
+    <section className="w-full max-w-md flex justify-evenly items-center border-b-white border-b p-2">
       <div className={`transition p-2 relative ${player === TOKEN.PLAYER1 ? '-translate-y-1/4' : ''}`} >
         <div className={`relative size-12 aspect-square grid place-items-center rounded-full
           ${tokenStyle.player1}

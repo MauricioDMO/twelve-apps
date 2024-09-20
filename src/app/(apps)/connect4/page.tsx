@@ -8,6 +8,7 @@ import { ResetWinsButton } from "./components/ResetWinsButton";
 import { RestartButton } from "./components/RestartButton";
 import { Table } from "./components/Table";
 import { GameProvider } from "./context/Game";
+import { KeyCaps } from "./components/KeyCaps";
  
 export const metadata: Metadata = {
   title: '12 Apps - Conecta 4',
@@ -15,7 +16,6 @@ export const metadata: Metadata = {
 }
 
 export default function Connect4 () {
-
   return (
     <>
       <GlobalCss />
@@ -24,9 +24,10 @@ export default function Connect4 () {
         <h1 className={`text-2xl py-4 text-center ${robotoMono.className}`} >
           Conecta 4
         </h1>
-        <section className="w-full px-4 place-items-center grid">
+        <section className="w-full px-4 place-items-center grid pb-10 sm:pb-0">
           <GameProvider>
             <Panel />
+            <KeyCaps />
             <Table />
             <section className="flex gap-2 my-8 z-10">
               <RestartButton />
@@ -34,7 +35,9 @@ export default function Connect4 () {
             </section>
           </GameProvider>
         </section>
-        <HelpBubble />
+        <section className="absolute bottom-4 left-4 flex gap-4">
+          <HelpBubble />
+        </section>
       </div>
     </>
   )
