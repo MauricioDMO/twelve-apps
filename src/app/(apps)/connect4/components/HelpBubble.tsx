@@ -1,8 +1,13 @@
 "use client"
 
+import { robotoMono } from "@/ui/fonts"
 import { IconQuestionMark } from "@tabler/icons-react"
+import { Key } from "./Key"
+import { useHints } from "../hooks/useHints"
 
 export function HelpBubble() {
+  const { hints, setHints } = useHints()
+
   const openHelp = () => {
     const helpDialog = document.getElementById("help") as HTMLDialogElement
     helpDialog.showModal()
@@ -23,19 +28,57 @@ export function HelpBubble() {
     <dialog
       onClick={closeHelp}
       id="help"
-      className="p-4 fixed top-0 bg-zinc-800 text-white rounded-lg backdrop:backdrop-blur">
-      <h2 className="text-2xl mb-2">Ayuda</h2>
-      <p>
-        Para jugar, presiona las teclas del 1 al 7 para colocar una ficha en la columna correspondiente.
+      className="p-4 px-6 fixed top-0 bg-zinc-800 text-white rounded-lg max-w-2xl backdrop:backdrop-blur">
+      <h2 className={`text-2xl mb-6 text-center ${robotoMono.className}`}>Ayuda</h2>
+      
+      <p className="my-2">
+        Conecta 4 es un juego de mesa en el que dos jugadores compiten por ser el primero en alinear 4 fichas de su color en horizontal, vertical o diagonal.
       </p>
-      <p>
-        Presiona la barra espaciadora para reiniciar el juego.
+      
+      <hr className="my-6 border-purple-500/50" />
+
+      <div className="grid md:grid-cols-2">
+        <div className="grid">
+          <p className="py-2 text-center text-balance">
+            Para jugar, para jugar puedes presionar los números del 1 al 7 para colocar una ficha en la columna correspondiente.
+          </p>
+          <section className="grid grid-cols-7 gap-3 max-w-md mx-auto py-4">
+            {Array.from({ length: 7 }).map((_, i) => (
+              <Key className="size-full" key={i} text={i + 1} keyTrigger={`${i + 1}`} />
+            ))}
+          </section>
+        </div>
+        <div className="grid">
+          <p className="py-2 text-center text-balance">
+            Presiona la barra espaciadora para reiniciar el juego.
+          </p>
+          <section className="h-16 py-4 mx-auto flex">
+            <Key className="size-full" text={"Espacio"} textMargin={100} keyTrigger={" "} />
+          </section>
+        </div>
+      </div>
+
+
+      <p className={`my-2 tracking-wide text-center ${robotoMono.className}`}>
+        <span>¡Buena suerte!</span>
       </p>
-      <button
-        className="bg-zinc-600 text-white p-2 rounded-lg mt-4 mx-auto block"
-        onClick={closeHelp}>
-        Cerrar
-      </button>
+
+      <section
+        className="flex gap-4 items-center justify-center"
+      >
+        <button
+          onClick={() => setHints(prev => !prev)}
+          className="bg-zinc-600 text-white p-2 rounded-lg mt-4"
+        >
+          {hints ? "Ocultar" : "Mostrar"} ayudas 💡
+        </button>
+
+        <button
+          className="bg-zinc-600 text-white p-2 rounded-lg mt-4"
+          onClick={closeHelp}>
+          Cerrar
+        </button>
+      </section>
     </dialog>
   </>
 }
