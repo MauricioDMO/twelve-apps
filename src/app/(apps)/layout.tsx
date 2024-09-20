@@ -12,7 +12,7 @@ export default function AppLayout ({children} : { children: React.ReactNode }) {
         </Link>
         <h1 className={`text-2xl font-extralight ${robotoMono.className}`}>Reto de 12 aplicaciones</h1>
       </header>
-      <main className="flex-grow relative">
+      <main className="flex-grow grid">
         {children}
       </main>
       <footer className="bg-zinc-800 text-white p-4">
